@@ -1,22 +1,19 @@
 #include <bits/stdc++.h>
-using namespace std;
-priority_queue<int, vector<int>, greater<int> > pq; //오름차순
-priority_queue<int> pq2; // 내림차순
-priority_queue<int, vector<int>, less<int> > pq3; // 내림차순
-int main(){
-for(int i = 5; i >= 1; i--){
-pq.push(i); pq2.push(i); pq3.push(i);
+using namespace std;  
+int a[9]; 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    for(int i = 0; i < 9; i++){
+        cin >> a[i]; 
+    }
+    sort(a, a + 9);
+    do{
+        int sum = 0; 
+        for(int i = 0; i < 7; i++) sum += a[i]; 
+        if(sum == 100)break;
+    }while(next_permutation(a, a + 9)); 
+    for(int i = 0; i < 7; i++) cout << a[i] << "\n"; 
+    return 0;
 }
-while(pq.size()){
-cout << pq.top() << " : " << pq2.top() << " : " << pq3.top() << '\n';
-pq.pop(); pq2.pop(); pq3.pop();
-}
-return 0;
-}
-/*sf
-1 : 5 : 5
-2 : 4 : 4
-3 : 3 : 3
-4 : 2 : 2
-5 : 1 : 1
-*/
